@@ -1,4 +1,5 @@
 import statistics
+import math
 
 def readFile(inputLocation):
     with open(inputLocation, 'r') as inputFile:
@@ -14,16 +15,21 @@ def readFile(inputLocation):
 def fuelUsage(crabs, location):
     fuelSum = 0
     for position in crabs:
-        fuelSum += abs(position - location)
+        fuelSum += sum1toN(abs(position - location))
     return fuelSum
+
+
+def sum1toN(N):
+    return (N*(N+1))/2
+
 
 crabList = readFile('input/day7.txt')
 print(crabList)
 mean = statistics.mean(crabList)
 median = statistics.median(crabList)
-print(round(mean))
-print(fuelUsage(crabList, round(mean)))
-print(median)
+print("mean:", math.floor(mean))
+print(fuelUsage(crabList, math.floor(mean)))
+print("median:", median)
 print(fuelUsage(crabList, median))
 
 
