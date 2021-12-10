@@ -75,7 +75,7 @@ def sumBoard(board):
     return boardSum
 
 
-lines = readFile('input/day4.txt')
+lines = readFile('input/day04.txt')
 print(lines)
 
 order = [int(number) for number in lines[0].split(',')]

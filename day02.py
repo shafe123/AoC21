@@ -41,7 +41,7 @@ def processLinesWithAim(lines):
     return horizontal, vertical
 
 
-lines = readFile('input/day2.txt')
+lines = readFile('input/day02.txt')
 print(lines)
 h, v = processLinesWithAim(lines)
 

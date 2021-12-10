@@ -39,6 +39,6 @@ def processLinesByWindow(lines, windowSize):
 
 
 if __name__ == "__main__":
-    lines = readFile('input/day1.txt')
+    lines = readFile('input/day01.txt')
     print(processLinesByOne(lines))
     print(processLinesByWindow(lines, 3))

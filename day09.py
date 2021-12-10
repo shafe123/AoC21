@@ -100,7 +100,7 @@ def findAllBasins(grid, coords):
     return basinSizes
 
 
-heightMap = readFile('input/day9.txt')
+heightMap = readFile('input/day09.txt')
 print(heightMap)
 lows = findLows(heightMap)
 print(lows)

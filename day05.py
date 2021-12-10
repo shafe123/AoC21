@@ -91,7 +91,7 @@ def countGrid(grid):
                 count += 1
     return count
 
-lines, maxCoord = readFile('input/day5.txt')
+lines, maxCoord = readFile('input/day05.txt')
 grid = buildGrid(lines, maxCoord)
 count = countGrid(grid)
 print(count)

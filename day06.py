@@ -24,7 +24,7 @@ def stepDays(inputFish, numDays):
         stepDay(inputFish)
 
 
-inputFish = readFile('input/day6.txt')
+inputFish = readFile('input/day06.txt')
 print(inputFish)
 stepDays(inputFish, 1)
 print(inputFish)

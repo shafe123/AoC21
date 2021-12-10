@@ -23,7 +23,7 @@ def sum1toN(N):
     return (N*(N+1))/2
 
 
-crabList = readFile('input/day7.txt')
+crabList = readFile('input/day07.txt')
 print(crabList)
 mean = statistics.mean(crabList)
 median = statistics.median(crabList)

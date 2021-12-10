@@ -68,7 +68,7 @@ def filterColumn(lines, index, character):
     return result
 
 
-lines = readFile('input/day3.txt')
+lines = readFile('input/day03.txt')
 print(lines)
 g, e = processLines(lines)
 print(g * e)

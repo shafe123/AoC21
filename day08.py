@@ -96,6 +96,6 @@ def processLines(left, right):
     return rightSum
 
 
-leftLines, rightLines = readFile('input/day8.txt')
+leftLines, rightLines = readFile('input/day08.txt')
 outputSum = processLines(leftLines, rightLines)
 print(outputSum)
