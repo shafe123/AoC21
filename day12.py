@@ -1,3 +1,5 @@
+from collections import Counter
+
 def readFile(inputLocation):
     with open(inputLocation, 'r') as inputFile:
         inputLines = inputFile.readlines()
@@ -8,6 +10,15 @@ def readFile(inputLocation):
     return inputLines
 
 
+def smallCaveVisitedTwice(path):
+    countDict = dict(Counter(path))
+    for entry in countDict:
+        if entry.islower() and countDict[entry] >= 2:
+            return True
+
+    return False
+
+
 def buildPath(currentPath, allPaths, pathMap):
     currentNode = currentPath[-1]
 
@@ -15,7 +26,9 @@ def buildPath(currentPath, allPaths, pathMap):
         return
 
     for entry in pathMap[currentNode]:
-        if entry.islower() and entry in currentPath:
+        if entry == 'start':
+            continue
+        elif entry.islower() and entry in currentPath and smallCaveVisitedTwice(currentPath):
             continue
         elif entry == 'end':
             newPath = currentPath.copy()
