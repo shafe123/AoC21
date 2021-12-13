@@ -63,7 +63,7 @@ def buildMap(inputList):
     return mapping
 
 
-mapList = readFile('input/day12.txt')
+mapList = readFile('input/day12.sample.txt')
 mapDict = buildMap(mapList)
 
 foundPaths = []
