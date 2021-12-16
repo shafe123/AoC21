@@ -87,7 +87,7 @@ def processPacket(packet):
     elif type == 5:
         values = [1 if values[0] > values[1] else 0]
     elif type == 6:
-        values = [0 if values[0] > values[1] else 1]
+        values = [1 if values[0] < values[1] else 0]
     elif type == 7:
         values = [1 if values[0] == values[1] else 0]
 
