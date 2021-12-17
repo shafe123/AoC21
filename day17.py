@@ -12,16 +12,16 @@ def readFile(inputLocation):
 def tryShot(initialX, initialY, xBound, yBound):
     xVelocity = initialX
     yVelocity = initialY
-    xPos = 0 + xVelocity
-    yPos = 0 + yVelocity
-    yMax = max(0, yPos)
+    xPos = 0
+    yPos = 0
+    yMax = 0
 
     while True:
-        xVelocity = max(0, xVelocity - 1)
-        yVelocity -= 1
-
         xPos += xVelocity
         yPos += yVelocity
+
+        xVelocity = max(0, xVelocity - 1)
+        yVelocity -= 1
 
         if yPos > yMax:
             yMax = yPos
@@ -35,15 +35,18 @@ def tryShot(initialX, initialY, xBound, yBound):
 
 
 def bruteForce(xBounds, yBounds):
-    maxHeights = []
-    for xVel in range(1 ,1000):
-        for yVel in range(-10, 1000):
+    successes = []
+    for xVel in range(1, max(xBounds) + 1):
+        for yVel in range(min(yBounds)-1, 1000):
             worked, yMax = tryShot(xVel, yVel, xBounds, yBounds)
             if worked:
-                maxHeights.append(yMax)
+                successes.append((xVel, yVel))
 
-    return max(maxHeights)
+    return successes
+
 
 xb, yb = readFile('input/day17.txt')
 print(xb, yb)
-print(bruteForce(xb, yb))
+print(tryShot(29, -6, xb, yb))
+successes = bruteForce(xb, yb)
+print(len(successes), successes)
